@@ -19,6 +19,7 @@ BuildRequires:	perl(Class::Member)
 BuildRequires:	perl(Perl::AtEndOfScope)
 BuildRequires:  apache-mod_perl-devel
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Apache2::ClickPath adds a PerlTransHandler and an output filter to
