@@ -1,25 +1,24 @@
-%define module		Apache2-ClickPath
-%define name		perl-%{module}
-%define version 	1.9.00
-%define revision	1.900
-%define release		%mkrel 4
+%define upstream_name		Apache2-ClickPath
+%define upstream_version	1.901
 
-Name: 		%{name}
-Version: 	%{version}
-Release:	%{release} 
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
 Summary:	Apache WEB Server User Tracking
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/Apache/%{module}-%{revision}.tar.bz2
+URL:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl(Class::Member)
 BuildRequires:	perl(Perl::AtEndOfScope)
 BuildRequires:  apache-mod_perl-devel
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
 Apache2::ClickPath adds a PerlTransHandler and an output filter to
@@ -28,7 +27,7 @@ URI to decide if an existing session is used or a new one has to
 be created.
 
 %prep
-%setup -q -n %{module}-%{revision} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
