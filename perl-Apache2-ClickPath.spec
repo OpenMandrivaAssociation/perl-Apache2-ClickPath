@@ -2,14 +2,14 @@
 %define upstream_version	1.901
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	6
 
 Summary:	Apache WEB Server User Tracking
 License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.tar.gz
+URL:		https://metacpan.org/dist/Apache2-ClickPath
+Source0:	https://cpan.metacpan.org/authors/id/O/OP/OPI/Apache2-ClickPath-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
