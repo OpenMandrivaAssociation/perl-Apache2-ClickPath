@@ -1,15 +1,13 @@
 %define upstream_name		Apache2-ClickPath
-%define upstream_version	1.901
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	1.901
+Release:	7
 
 Summary:	Apache WEB Server User Tracking
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://metacpan.org/dist/Apache2-ClickPath
-Source0:	https://cpan.metacpan.org/authors/id/O/OP/OPI/Apache2-ClickPath-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/O/OP/OPI/Apache2-ClickPath-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ URI to decide if an existing session is used or a new one has to
 be created.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -51,8 +49,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Sun Jul 12 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 1.901.0-1mdv2011.0
 + Revision: 395037
 - update to 1.901
-- using %%perl_convert_version
-- fixed license field
+- using %1.901 fixed license field
 
 * Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.9.00-4mdv2009.0
 + Revision: 255268
